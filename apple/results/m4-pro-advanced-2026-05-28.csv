@@ -1,0 +1,65 @@
+section,name,variant,value,unit,ops,bytes,median_ticks,ns_per_op,gib_per_s,cv_percent,note
+capability,cntfrq,cntfrq_el0,1000000000,Hz,0,0,0,0,0,0,fixed timer, not core cycles
+capability,kperf,dlopen,available,,0,0,0,0,0,0,framework and kpc symbol visible
+frontend_branch,data_branch,all_taken,,ns,200000,0,64452,0.322260000,0.000000,1.451801,inline asm branch over memory pattern
+frontend_branch,data_branch,alternating,,ns,200000,0,86553,0.432765000,0.000000,40.751520,inline asm branch over memory pattern
+frontend_branch,data_branch,lfsr_random,,ns,200000,0,200040,1.000200000,0.000000,1.314206,inline asm branch over memory pattern
+frontend_ras,recursive_call,depth_1,,ns,100000,0,82803,0.828030000,0.000000,0.027977,watch for non-linear jumps as depth grows
+frontend_ras,recursive_call,depth_2,,ns,150000,0,110386,0.735906667,0.000000,0.028723,watch for non-linear jumps as depth grows
+frontend_ras,recursive_call,depth_4,,ns,250000,0,165588,0.662352000,0.000000,1.415826,watch for non-linear jumps as depth grows
+frontend_ras,recursive_call,depth_8,,ns,450000,0,271575,0.603500000,0.000000,3.671079,watch for non-linear jumps as depth grows
+frontend_ras,recursive_call,depth_16,,ns,850000,0,524882,0.617508235,0.000000,2.441806,watch for non-linear jumps as depth grows
+frontend_ras,recursive_call,depth_24,,ns,1250000,0,726321,0.581056800,0.000000,1.037897,watch for non-linear jumps as depth grows
+frontend_ras,recursive_call,depth_32,,ns,1650000,0,804624,0.487650909,0.000000,4.806300,watch for non-linear jumps as depth grows
+frontend_ras,recursive_call,depth_48,,ns,2450000,0,1182268,0.482558367,0.000000,4.412504,watch for non-linear jumps as depth grows
+frontend_ras,recursive_call,depth_64,,ns,3250000,0,15102160,4.646818462,0.000000,2.340179,watch for non-linear jumps as depth grows
+frontend_icache,indirect_fanout,1_tiny_functions,,ns,200000,0,135904,0.679520000,0.000000,4.884406,64-byte aligned tiny functions; mixes I-cache, BTB, and indirect target prediction
+frontend_icache,indirect_fanout,2_tiny_functions,,ns,200000,0,144337,0.721685000,0.000000,7.764374,64-byte aligned tiny functions; mixes I-cache, BTB, and indirect target prediction
+frontend_icache,indirect_fanout,4_tiny_functions,,ns,200000,0,369170,1.845850000,0.000000,6.432093,64-byte aligned tiny functions; mixes I-cache, BTB, and indirect target prediction
+frontend_icache,indirect_fanout,8_tiny_functions,,ns,200000,0,362336,1.811680000,0.000000,0.006293,64-byte aligned tiny functions; mixes I-cache, BTB, and indirect target prediction
+frontend_icache,indirect_fanout,16_tiny_functions,,ns,200000,0,370854,1.854270000,0.000000,4.812120,64-byte aligned tiny functions; mixes I-cache, BTB, and indirect target prediction
+frontend_icache,indirect_fanout,32_tiny_functions,,ns,200000,0,388603,1.943015000,0.000000,6.272211,64-byte aligned tiny functions; mixes I-cache, BTB, and indirect target prediction
+frontend_icache,indirect_fanout,64_tiny_functions,,ns,200000,0,362336,1.811680000,0.000000,3.065924,64-byte aligned tiny functions; mixes I-cache, BTB, and indirect target prediction
+memory_random,random_load64,64.0 KiB,,ns,200000,1600000,30809,0.154045000,48.366260,0.112915,permuted 64-bit addresses
+memory_random,random_store64,64.0 KiB,,ns,200000,1600000,92844,0.464220000,16.049676,0.581633,permuted 64-bit addresses
+memory_random,random_rmw64,64.0 KiB,,ns,400000,3200000,53744,0.134360000,55.452371,0.445757,load plus store at permuted address
+memory_random,random_load64,128.0 KiB,,ns,200000,1600000,40643,0.203215000,36.663537,5.956011,permuted 64-bit addresses
+memory_random,random_store64,128.0 KiB,,ns,200000,1600000,94178,0.470890000,15.822338,7.267787,permuted 64-bit addresses
+memory_random,random_rmw64,128.0 KiB,,ns,400000,3200000,73369,0.183422500,40.619775,0.103724,load plus store at permuted address
+memory_random,random_load64,256.0 KiB,,ns,200000,1600000,62619,0.313095000,23.796549,10.663464,permuted 64-bit addresses
+memory_random,random_store64,256.0 KiB,,ns,200000,1600000,106320,0.531600000,14.015389,4.711317,permuted 64-bit addresses
+memory_random,random_rmw64,256.0 KiB,,ns,400000,3200000,107012,0.267530000,27.849514,6.877221,load plus store at permuted address
+memory_random,random_load64,1.0 MiB,,ns,200000,1600000,39017,0.195085000,38.191458,0.782496,permuted 64-bit addresses
+memory_random,random_store64,1.0 MiB,,ns,200000,1600000,92970,0.464850000,16.027924,1.711746,permuted 64-bit addresses
+memory_random,random_rmw64,1.0 MiB,,ns,400000,3200000,71576,0.178940000,41.637312,0.349505,load plus store at permuted address
+memory_random,random_load64,4.0 MiB,,ns,200000,1600000,101636,0.508180000,14.661302,3.962052,permuted 64-bit addresses
+memory_random,random_store64,4.0 MiB,,ns,200000,1600000,161213,0.806065000,9.243151,0.134690,permuted 64-bit addresses
+memory_random,random_rmw64,4.0 MiB,,ns,400000,3200000,186230,0.465575000,16.002965,1.112151,load plus store at permuted address
+memory_random,random_load64,16.0 MiB,,ns,200000,1600000,139922,0.699610000,10.649620,36.422811,permuted 64-bit addresses
+memory_random,random_store64,16.0 MiB,,ns,200000,1600000,156046,0.780230000,9.549211,4.803871,permuted 64-bit addresses
+memory_random,random_rmw64,16.0 MiB,,ns,400000,3200000,225456,0.563640000,13.218687,1.979993,load plus store at permuted address
+memory_bandwidth,stream_read,8.0 MiB,,ns,4194304,33554432,285991,0.068185568,109.269173,2.467235,sequential uint64 read sum
+memory_bandwidth,stream_write,8.0 MiB,,ns,4194304,33554432,446846,0.106536388,69.934608,4.937676,sequential uint64 stores
+memory_bandwidth,memcpy,8.0 MiB,,ns,33554432,67108864,428497,0.012770206,145.858664,5.235255,bytes count includes read plus write traffic
+memory_bandwidth,stream_read,64.0 MiB,,ns,33554432,268435456,2888212,0.086075425,86.558743,3.575522,sequential uint64 read sum
+memory_bandwidth,stream_write,64.0 MiB,,ns,33554432,268435456,3246238,0.096745431,77.012222,2.340561,sequential uint64 stores
+memory_bandwidth,memcpy,64.0 MiB,,ns,268435456,536870912,4004345,0.014917348,124.864366,1.668594,bytes count includes read plus write traffic
+memory_bandwidth,stream_read,256.0 MiB,,ns,134217728,1073741824,11629923,0.086649679,85.985092,1.876971,sequential uint64 read sum
+memory_bandwidth,stream_write,256.0 MiB,,ns,134217728,1073741824,13028673,0.097071178,76.753788,0.695879,sequential uint64 stores
+memory_bandwidth,memcpy,256.0 MiB,,ns,1073741824,2147483648,17186272,0.016005963,116.371951,0.438830,bytes count includes read plus write traffic
+memory_mlp,pointer_chase,1_streams,,ns,131072,0,202706,1.546524048,0.000000,7.890453,independent 1 MiB pointer rings
+memory_mlp,pointer_chase,2_streams,,ns,262144,0,206081,0.786136627,0.000000,4.789285,independent 1 MiB pointer rings
+memory_mlp,pointer_chase,4_streams,,ns,524288,0,351152,0.669769287,0.000000,0.206925,independent 1 MiB pointer rings
+memory_mlp,pointer_chase,8_streams,,ns,1048576,0,1016222,0.969144821,0.000000,7.021647,independent 1 MiB pointer rings
+core_scaling,thr_add8,user_interactive_1_threads,,ns,6400000,0,276492,0.043201875,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,user_interactive_2_threads,,ns,12800000,0,308260,0.024082812,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,user_interactive_4_threads,,ns,25600000,0,299926,0.011715859,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,user_interactive_8_threads,,ns,51200000,0,314425,0.006141113,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,user_interactive_10_threads,,ns,64000000,0,323551,0.005055484,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,user_interactive_14_threads,,ns,89600000,0,607519,0.006780346,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,background_1_threads,,ns,6400000,0,350002,0.054687813,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,background_2_threads,,ns,12800000,0,518424,0.040501875,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,background_4_threads,,ns,25600000,0,707738,0.027646016,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,background_8_threads,,ns,51200000,0,1203769,0.023511113,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,background_10_threads,,ns,64000000,0,1529587,0.023899797,0.000000,0.000000,aggregate wall-time throughput
+core_scaling,thr_add8,background_14_threads,,ns,89600000,0,1877298,0.020951987,0.000000,0.000000,aggregate wall-time throughput
